@@ -2,16 +2,21 @@ import React from "react";
 import { AppBar, Toolbar, makeStyles,withStyles } from "@material-ui/core";
 import SearchBar from "./SearchBar";
 import HeaderBtn from "./HeaderBtn";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   header: {
       backgroundColor:"#2874F0",
       height:"60px",
-      boxShadow:"none"
+      boxShadow:"none",
+      position:"static"
   },
   logo:{
       width:"100px",
-      marginLeft:"12%"
+      marginRight:"10px"
+  },
+  navalign:{
+    marginLeft:"10%"
   }
 });
 const ToolBar = withStyles({
@@ -26,7 +31,9 @@ const Header = () => {
   return (
     <AppBar className={classes.header}>
       <ToolBar>
+        <Link to="/" className={classes.navalign}>
           <img src={logoUrl} className={classes.logo} />
+        </Link>
           <SearchBar/>
           <HeaderBtn/>
       </ToolBar>
