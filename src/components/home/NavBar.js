@@ -7,7 +7,8 @@ const useStyles = makeStyles({
         alignItems:"center",
         justifyContent:"space-between",
         textAlign:"center",
-        margin: "10px 130px 10px 130px"
+        padding: "10px 130px 10px 130px",
+        backgroundColor:"#ffffff"
     },
     container:{
        

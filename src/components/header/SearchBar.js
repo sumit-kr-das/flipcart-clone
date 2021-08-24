@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   searchicn: {
     color: "#2874F0",
-    padding: 5,
+    margin: 5,
   },
 }));
 

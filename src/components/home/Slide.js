@@ -7,7 +7,7 @@ import Countdown from "react-countdown";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 6,
+    items: 5,
     slidesToSlide: 3,
   },
   tablet: {
@@ -24,7 +24,7 @@ const responsive = {
 
 const useStyle = makeStyles({
   image: {
-    height: 150,
+    height: 180,
   },
   component: {
     marginTop: 12,
@@ -54,7 +54,7 @@ const useStyle = makeStyles({
     fontSize: 13,
   },
   curosol: {
-    margin: "20px 10px",
+    padding: "25px 10px",
   },
   curosoltext:{
     fontSize:14,

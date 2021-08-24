@@ -6,6 +6,9 @@ import Slide from "./Slide";
 import MidSection from "./MidSection";
 
 const useStyle = makeStyles({
+  back:{
+    backgroundColor:"#f2f2f2"
+  },
   component: {
     padding: 10,
     backgroundColor: "#f2f2f2",
@@ -22,7 +25,7 @@ const Home = () => {
   const imgUrl =
     "https://rukminim1.flixcart.com/flap/464/708/image/a81d569793c249d1.jpg?q=70";
   return (
-    <>
+    <Box className={classes.back}>
       <NavBar />
       <Box className={classes.component}>
         <Banner />
@@ -42,7 +45,7 @@ const Home = () => {
       <Slide timer={false} title={"Suggested Items"} />
       <Slide timer={false} title={"Top Selections"} />
       <Slide timer={false} title={"Best Sellers"} />
-    </>
+    </Box>
   );
 };
 

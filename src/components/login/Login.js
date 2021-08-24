@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { Box,Dialog,DialogContent,makeStyles,Typography,TextField,Button } from "@material-ui/core";
+import { authiencateLogin,authiencateSignup } from '../../service/api';
 
 const useStyle = makeStyles({
     component:{
@@ -54,6 +55,11 @@ const useStyle = makeStyles({
         color:"#2874f0",
         fontWeight:600,
         cursor:"pointer"
+    },
+    error:{
+        fontSize:"10px",
+        color:"#ff6161",
+        marginTop:2
     }
 });
 
@@ -70,16 +76,59 @@ const initialVlaue={
     }
 };
 
-const Login = ({open,setOpen}) =>{
+const initialValue={
+    firstname:"",
+    lastname:"",
+    username:"",
+    email:"",
+    password:"",
+    phone:""
+};
+
+const loginInitialVal={
+    username:"",
+    password:"",
+};
+
+const Login = ({open,setOpen,setAccount}) =>{
+    const [user,setUser] = useState(initialValue);
+    const {firstname,lastname,username,email,password,phone} = user;
+    //login to
+    const [login,setLogin] = useState(loginInitialVal);
+    const [loginerr,setLoginerr] = useState(false);
+    //login end
     const classes = useStyle();
     console.log(initialVlaue.login);
-    const [account,setAccount] = useState(initialVlaue.login);
+    const [account,toggleAccount] = useState(initialVlaue.login);
     const handleClose = () =>{
         setOpen(false);
-        setAccount(initialVlaue.login);
+        toggleAccount(initialVlaue.login);
     }
     const loginToggle = () =>{
-        setAccount(initialVlaue.signup);
+        toggleAccount(initialVlaue.signup);
+    }
+    const onInputChenge = (e)=>{
+        console.log(e.target.value);
+        setUser({...user,[e.target.name]:e.target.value})
+    }
+    const signupUser = async () =>{
+        let response = await authiencateSignup(user);
+        if(!response) return;
+        handleClose();
+        setAccount(user.username); 
+    }
+    // login
+    const onLoginChenge = (e) =>{
+        setLogin({...login,[e.target.name]:e.target.value});
+    }
+    const loginUser = async () =>{
+        let res = await authiencateLogin(login);
+        if(!res){
+            setLoginerr(true);
+            return;
+        };
+        handleClose();
+        setAccount(login.username);
     }
     return(
         <Dialog open={open} onClose={handleClose} >
@@ -92,22 +141,23 @@ const Login = ({open,setOpen}) =>{
                     {
                         account.view === 'login'?
                         <Box className={classes.login} >
-                        <TextField name="username" label="Enter Email/Mobile number" />
-                        <TextField name="password" label="Enter Password" />
+                        <TextField onChange={(e)=>onLoginChenge(e)}  name="username" label="Enter Email/Mobile number" />
+                        <TextField onChange={(e)=>onLoginChenge(e)} name="password" label="Enter Password" />
+                        { loginerr && <Typography className={classes.error} >Invalid Username/Password</Typography> }
                         <Typography className={classes.text}>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Typography>
-                        <Button variant="contained" className={classes.loginBtn}>Login</Button>
+                        <Button onClick={()=>loginUser()} variant="contained" className={classes.loginBtn}>Login</Button>
                         <Typography style={{textAlign:"center"}} className={classes.text}>OR</Typography>
                         <Button variant="contained" className={classes.reqBtn}>Request OTP</Button>
-                        <Typography onClick={loginToggle} className={classes.createTxt}>New to Flipkart? Create an account</Typography>
+                        <Typography onClick={()=>loginToggle()} className={classes.createTxt}>New to Flipkart? Create an account</Typography>
                     </Box> :
                      <Box className={classes.login} >
-                         <TextField name="firstname" label="Enter Firstname" />
-                         <TextField name="lastname" label="Enter Lastname" />
-                         <TextField name="username" label="Enter Username" />
-                         <TextField name="email" label="Enter Email" />
-                         <TextField name="password" label="Enter Password" />
-                         <TextField name="phone" label="Enter Phone number" />
-                         <Button variant="contained" className={classes.loginBtn}>Signup</Button>
+                         <TextField onChange={(e)=>onInputChenge(e)} name="firstname" label="Enter Firstname" />
+                         <TextField onChange={(e)=>onInputChenge(e)} name="lastname" label="Enter Lastname" />
+                         <TextField onChange={(e)=>onInputChenge(e)} name="username" label="Enter Username" />
+                         <TextField onChange={(e)=>onInputChenge(e)} name="email" label="Enter Email" />
+                         <TextField onChange={(e)=>onInputChenge(e)} name="password" label="Enter Password" />
+                         <TextField onChange={(e)=>onInputChenge(e)} name="phone" label="Enter Phone number" />
+                         <Button onClick={signupUser} variant="contained" className={classes.loginBtn}>Signup</Button>
                     </Box>
                     }
 
