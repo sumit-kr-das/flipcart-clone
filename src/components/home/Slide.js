@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { products } from "../../constants/data";
+// import { products } from "../../constants/data"; imported from home
 import { Box, makeStyles, Typography, Button } from "@material-ui/core";
 import Countdown from "react-countdown";
 
@@ -62,7 +62,7 @@ const useStyle = makeStyles({
   }
 });
 
-const Slide = ({timer,title}) => {
+const Slide = ({timer,title,products}) => {
   const classes = useStyle();
   const timerClone =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg";
