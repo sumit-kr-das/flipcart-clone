@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 // import { products } from "../../constants/data"; imported from home
 import { Box, makeStyles, Typography, Button } from "@material-ui/core";
 import Countdown from "react-countdown";
+import { Link } from "react-router-dom";
 
 const responsive = {
   desktop: {
@@ -105,12 +106,14 @@ const Slide = ({timer,title,products}) => {
         containerClass="carousel-container"
       >
         {products.map((product) => (
-          <Box textAlign="center">
-            <img src={product.url} className={classes.image} />
-            <Typography className={classes.curosoltext} style={{fontWeight:"600", color:"#212121"}} >{product.title.shortTitle}</Typography>
-            <Typography className={classes.curosoltext} style={{color:"green"}} >{product.discount}</Typography>
-            <Typography className={classes.curosoltext} style={{color:"#212121", opacity:"0.6"}} >{product.tagline}</Typography>
-          </Box>
+          <Link to={`product/${product.id}`}>
+            <Box textAlign="center">
+              <img src={product.url} className={classes.image} />
+              <Typography className={classes.curosoltext} style={{fontWeight:"600", color:"#212121"}} >{product.title.shortTitle}</Typography>
+              <Typography className={classes.curosoltext} style={{color:"green"}} >{product.discount}</Typography>
+              <Typography className={classes.curosoltext} style={{color:"#212121", opacity:"0.6"}} >{product.tagline}</Typography>
+            </Box>
+          </Link>
         ))}
       </Carousel>
     </Box>
