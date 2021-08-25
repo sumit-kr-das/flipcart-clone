@@ -2,6 +2,9 @@ import { Box ,Button, makeStyles} from "@material-ui/core";
 import clsx from 'clsx';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
+import { useDispatch } from "react-redux";
+import { AddToCart } from "../../redux/actions/CartActions";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles({
     leftContainer:{
@@ -29,11 +32,18 @@ const useStyles = makeStyles({
 });
 
 const ActionItem = ({product}) =>{
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const addCartItems = () =>{
+        dispatch(AddToCart(product.id));
+        history.push("/cart");
+    }
     const classes = useStyles();
     return(
         <Box className={classes.leftContainer}>
             <img src={product.detailUrl} className={classes.image} />
-            <Button variant="contained" className={clsx(classes.Button,classes.addToCart)}><ShoppingCartIcon/>Add to Cart</Button>
+            <Button onClick={()=>addCartItems()} variant="contained" className={clsx(classes.Button,classes.addToCart)}><ShoppingCartIcon/>Add to Cart</Button>
             <Button variant="contained" className={clsx(classes.Button,classes.buyNow)}><FlashOnIcon/>Buy Now</Button>
         </Box>
     )

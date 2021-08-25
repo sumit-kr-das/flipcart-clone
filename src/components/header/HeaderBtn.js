@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import LoginDialog from "../login/Login";
 import { LoginContext } from "../../context/ContextProvider";
 import Profile from "./Profile";
+import { useSelector } from "react-redux";
 
 const useStyle = makeStyles({
   login: {
@@ -38,6 +39,9 @@ const useStyle = makeStyles({
 const HeaderBtn = () => {
   const [open, setOpen] = useState(false);
   const {account,setAccount} = useContext(LoginContext);
+
+  const { cartItems } = useSelector(state=>state.cart);
+
   const openLoginDialogue = () => {
     setOpen(true);
   };
@@ -59,7 +63,7 @@ const HeaderBtn = () => {
         <Typography className={classes.more}>More</Typography>
       </Link>
       <Link to="/cart" className={classes.container}>
-        <Badge badgeContent={4} color="secondary">
+        <Badge badgeContent={cartItems.length} color="secondary">
           <ShoppingCartIcon />
         </Badge>
         <Typography style={{ marginLeft: "10px" }}>Cart</Typography>
