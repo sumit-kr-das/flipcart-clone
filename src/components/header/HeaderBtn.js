@@ -7,7 +7,7 @@ import { LoginContext } from "../../context/ContextProvider";
 import Profile from "./Profile";
 import { useSelector } from "react-redux";
 
-const useStyle = makeStyles({
+const useStyle = makeStyles(theme=>({
   login: {
     background: "#fff",
     color: "#2874f0",
@@ -21,20 +21,27 @@ const useStyle = makeStyles({
     margin: "0 7% 0 auto",
     display: "flex",
     alignItems: "center",
+    [theme.breakpoints.down('sm')]:{
+      display:"block"
+    },
     "& > *": {
       marginRight: "50px",
-      textDecoration:"none"
+      textDecoration:"none",
     },
   },
   container: {
     display: "flex",
     textDecoration: "none",
     color: "#fff",
+    [theme.breakpoints.down('sm')]:{
+      // display:"block",
+      color:"#2874f0"
+    }
   },
   more: {
     color:"#ffffff"
   }
-});
+}));
 
 const HeaderBtn = () => {
   const [open, setOpen] = useState(false);

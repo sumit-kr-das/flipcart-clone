@@ -16,7 +16,7 @@ const useStyle = makeStyles(theme => ({
       // margin: '0 80px',
       display: 'flex',
       [theme.breakpoints.down('md')]: {
-          margin: 0
+          margin: 0,
       }
   },
   rightContainer: {

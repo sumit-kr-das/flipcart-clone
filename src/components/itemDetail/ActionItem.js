@@ -6,9 +6,12 @@ import { useDispatch } from "react-redux";
 import { AddToCart } from "../../redux/actions/CartActions";
 import { useHistory } from "react-router";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
     leftContainer:{
-        padding:"40px 0 0 80px"
+        padding:"40px 0 0 80px",
+        [theme.breakpoints.down('md')]:{
+            padding:"20px 40px"
+        }
     },
     image:{
         padding:"15px 20px",
@@ -29,7 +32,7 @@ const useStyles = makeStyles({
         color:"#fff",
         borderRadius:"2px"
     }
-});
+}));
 
 const ActionItem = ({product}) =>{
     const dispatch = useDispatch();

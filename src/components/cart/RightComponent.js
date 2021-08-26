@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const useStyles = makeStyles({
     component:{
-        width:"30%",
+        // width:"30%",
         background:"#fff",
         marginLeft:15
     },

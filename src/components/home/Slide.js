@@ -23,7 +23,7 @@ const responsive = {
   },
 };
 
-const useStyle = makeStyles({
+const useStyle = makeStyles(theme=>({
   image: {
     height: 180,
   },
@@ -47,6 +47,7 @@ const useStyle = makeStyles({
   txt: {
     fontWeight: "bold",
     fontSize: "1.5rem",
+    alignItems:"center"
   },
   button: {
     marginLeft: "auto",
@@ -60,8 +61,13 @@ const useStyle = makeStyles({
   curosoltext:{
     fontSize:14,
     marginTop:5
+  },
+  timr:{
+    [theme.breakpoints.down('sm')]:{
+      display:"none"
+    }
   }
-});
+}));
 
 const Slide = ({timer,title,products}) => {
   const classes = useStyle();
@@ -81,13 +87,14 @@ const Slide = ({timer,title,products}) => {
         <Typography className={classes.txt}>{title}</Typography>
         {
         timer && 
-        <><img src={timerClone} className={classes.timer} />
-        <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
+          <span className={classes.timr}>
+            <img src={timerClone} className={classes.timer} />
+            <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
+          </span>
+        }
         <Button variant="contained" color="primary" className={classes.button}>
           View All
         </Button>
-        </>
-        }
       </Box>
       <Carousel
         className={classes.curosol}
@@ -100,13 +107,13 @@ const Slide = ({timer,title,products}) => {
         autoPlaySpeed={10000}
         keyBoardControl={true}
         showDots={false}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
         containerClass="carousel-container"
       >
         {products.map((product) => (
-          <Link to={`product/${product.id}`}>
+          <Link to={`product/${product.id}`} style={{textDecoration:"none"}}>
             <Box textAlign="center">
               <img src={product.url} className={classes.image} />
               <Typography className={classes.curosoltext} style={{fontWeight:"600", color:"#212121"}} >{product.title.shortTitle}</Typography>
