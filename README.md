@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+## 📌 Motive of the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<b>Online Food Delivery Appication</b> is a full-stack MERN tool. The main objective of the project is to learn and implement a real- time application on database for Online-Food Ordering System
 
-## Available Scripts
+## Preview Application
 
-In the project directory, you can run:
+![Design preview for Online Food Delivery Appication](https://www.linkedin.com/feed/update/urn:li:activity:6836725524526706688/)
 
-### `npm start`
+## 💡 Key Points
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The project, concentrates on taking orders, streamlining the orders to a specified restaurant and billing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- It uses ReactJS, 
+NodeJS, 
+MongoDB & powerfull login, sign up authentication.
+It also use REST FULL API.
 
-### `npm test`
+## ⭐ Contribution:
+**1.** Fork [this](https://github.com/sumit-kr-das/flipcart-clone) repository.
+Click on the <img src="https://img.icons8.com/ios/24/000000/code-fork.png"></a> symbol at the top right corner.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**2.** Clone the forked repository.
 
-### `npm run build`
+```bash
+git clone https://github.com/sumit-kr-das/flipcart-clone
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**3.** Navigate to the project directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd flipcart-clone
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+**4.** Make changes in source code.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**5.** Stage your changes and commit
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+#Add changes to Index
+git add .
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#Commit to the local repo
+git commit -m "<your_commit_message>"
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**7.** Push your local commits to the remote repo.
 
-## Learn More
+```bash
+git push
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**8.** Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) !
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**9.** **Congratulations!** Sit and relax, you've made your contribution to [Sumit's](https://github.com/sumit-kr-das) project.
 
-### Code Splitting
+##  ▶️ How to Run the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**1.** Navigate to the project directory.
 
-### Analyzing the Bundle Size
+```bash
+cd flipcart-clone
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**2.** Navigate to the Client directory.
 
-### Making a Progressive Web App
+```bash
+npm install
+npm start / yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**3.** Navigate to the Server directory.
 
-### Advanced Configuration
+Clone [this](https://github.com/sumit-kr-das/flipcart-server) repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Congratulations 🎊🎉
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
