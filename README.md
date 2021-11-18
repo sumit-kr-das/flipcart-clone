@@ -1,6 +1,6 @@
 ## 📌 Motive of the Project
 
-<b>Online Food Delivery Appication</b> is a full-stack MERN tool. The main objective of the project is to learn and implement a real- time application on database for Online-Food Ordering System
+<b>Flipcart Clone Appication</b> is a full-stack MERN tool. The main objective of the project is to learn and implement a real- time application on database for ecom website.
 
 ## Preview Application
 
@@ -12,7 +12,7 @@ The project, concentrates on taking orders, streamlining the orders to a specifi
 
 - It uses ReactJS, 
 NodeJS, 
-MongoDB & powerfull login, sign up authentication.
+MongoDB & login, sign up authentication.
 It also use REST FULL API.
 
 ## ⭐ Contribution:
