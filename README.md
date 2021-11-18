@@ -4,7 +4,7 @@
 
 ## Preview Application
 
-[Design preview for Online Food Delivery Appication](https://www.linkedin.com/feed/update/urn:li:activity:6836725524526706688/)
+[Design preview for Flipcart Clone Appication](https://www.linkedin.com/feed/update/urn:li:activity:6836725524526706688/)
 
 ## 💡 Key Points
 
